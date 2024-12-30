@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>学習タイマー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>学習タイマー</h1>
+        
+        <div class="study-form">
+            <select id="subject" required>
+                <option value="">科目を選択</option>
+                <option value="英語">英語</option>
+                <option value="数学">数学</option>
+                <option value="国語">国語</option>
+                <option value="理科">理科</option>
+                <option value="社会">社会</option>
+                <option value="その他">その他</option>
+            </select>
+            <input type="number" id="minutes" placeholder="学習時間（分）" required>
+            <input type="number" id="break-minutes" placeholder="休憩時間（分）" required>
+            <button onclick="addSubject()" class="start-btn">追加</button>
+        </div>
 
+        <div class="current-status" id="status-display"></div>
+
+        <div class="timer-display">
+            00:00:00
+        </div>
+
+        <div class="controls">
+            <button class="start-btn" onclick="startTimer()">開始</button>
+            <button class="pause-btn" onclick="pauseTimer()">一時停止</button>
+            <button class="reset-timer-btn" onclick="resetTimer()">タイマーリセット</button>
+            <button class="reset-subjects-btn" onclick="resetSubjects()">科目リセット</button>
+        </div>
+
+        <div class="subject-info">
+            <h3>設定した科目</h3>
+            <div id="subject-list"></div>
+        </div>
+
+        <div class="completion-message" id="completion-message">
+            すべての科目が終了しました！お疲れ様でした！
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
